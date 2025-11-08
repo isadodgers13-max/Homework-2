@@ -1,0 +1,9 @@
+<form th:action="@{/students/register}" th:object="${student}" method="post">
+  <div class="mb-3">
+    <label>First name</label>
+    <input th:field="*{firstName}" class="form-control"/>
+    <div class="text-danger" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></div>
+  </div>
+  ...
+  <button class="btn btn-primary">Register</button>
+</form>
