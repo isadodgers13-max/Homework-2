@@ -1,0 +1,11 @@
+<form th:action="@{|/classes/${swimClass.id}/assign|}" method="post">
+  <h3 th:text="${swimClass.name}">Class name</h3>
+  <div th:each="s : ${students}">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" th:id="${'s'+s.id}" th:name="studentIds"
+             th:value="${s.id}" th:checked="${swimClass.students.contains(s)}"/>
+      <label class="form-check-label" th:for="${'s'+s.id}" th:text="${s.firstName + ' ' + s.lastName}"></label>
+    </div>
+  </div>
+  <button class="btn btn-primary mt-3">Save assignments</button>
+</form>
