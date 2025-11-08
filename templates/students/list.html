@@ -1,0 +1,10 @@
+<table class="table">
+  <thead><tr><th>ID</th><th>Name</th><th>Email</th></tr></thead>
+  <tbody>
+    <tr th:each="s : ${students}">
+      <td th:text="${s.id}"></td>
+      <td th:text="${s.firstName + ' ' + s.lastName}"></td>
+      <td th:text="${s.email}"></td>
+    </tr>
+  </tbody>
+</table>
